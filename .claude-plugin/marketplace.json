@@ -1,0 +1,14 @@
+{
+  "name": "agent-workflow-kit",
+  "description": "Local marketplace for the wf workflow kit.",
+  "owner": {
+    "name": "Richard"
+  },
+  "plugins": [
+    {
+      "name": "wf",
+      "source": "./",
+      "description": "Language-agnostic feature workflow with lanes, role agents and token-cost rules."
+    }
+  ]
+}

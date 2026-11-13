@@ -1,0 +1,8 @@
+{
+  "name": "wf",
+  "version": "0.1.0",
+  "description": "Language-agnostic feature workflow: pick the lightest lane (fast, medium, large), build with goal-and-mindset agents, keep token cost low.",
+  "author": { "name": "Richard" },
+  "license": "MIT",
+  "keywords": ["workflow", "agents", "planning", "slices", "worktrees"]
+}
