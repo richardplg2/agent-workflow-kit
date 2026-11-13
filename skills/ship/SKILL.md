@@ -6,6 +6,7 @@ description: Large lane step 4 - long-running orchestrator that executes an appr
 
 The owner approved the plan so they do not have to babysit. Keep agents busy, keep the integration branch green, come back only for
 what only the owner can decide. A quiet, steady run is success. Per-slice procedure: `references/slice.md` (read it when you advance a slice).
+**Start:** read `.claude/workflow.md` (verbs, `<key>` placeholders, `R`, run rules); missing → `/wf:setup`.
 
 ## Start or resume
 1. `<docs.master>` must be `approved` or `in progress`; else `/wf:slice-plan`.

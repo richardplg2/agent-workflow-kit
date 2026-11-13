@@ -8,7 +8,7 @@ touches. Row → `running`.
 and "done when", files it owns and what the parallel agent owns, starting files and symbols, targeted verbs only, "commit nothing",
 "report ≤ 15 lines". `run_in_background: true`; no `isolation: worktree` (W already is one). Model from the plan's Model column if it is
 still a closed task; a sonnet brief adds "decide nothing the plan does not state; stop and report gaps".
-Reuse per `/wf:work` rule 4.
+Reuse per run rule 4 in `.claude/workflow.md`; `R`, `<worktrees>` and the verbs are defined there too.
 
 | Step | Agent | After | Done when |
 |---|---|---|---|

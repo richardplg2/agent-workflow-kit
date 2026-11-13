@@ -45,10 +45,10 @@ Search and test runs use your global `scout` / `runner` (haiku) agents if you ha
 ## Token cost (measured in words against the RMA originals)
 | Measure | RMA | wf |
 |---|---|---|
-| Descriptions loaded in every session (skills + agents) | 587 + 235 = 822 | 278 + 135 = 413 |
+| Descriptions loaded in every session (skills + agents) | 587 + 235 = 822 | 333 + 135 = 468 |
 | Agent body per spawn | 330–1060 (architect 1060) | 191–244 |
-| All skill bodies | 4149 | 2225 (+1693 in references/templates, read only when that step runs) |
+| All skill bodies | 4149 | 2181 (+2126 in references/templates, read only when that step runs) |
 
-The rules that keep a run cheap are in `skills/work/SKILL.md` §2: the main session does small changes itself, models are routed by
+The rules that keep a run cheap are the `Run rules` in each repo's `.claude/workflow.md` (template: `skills/setup/templates/workflow.md`), so a repo can tune them: the main session does small changes itself, models are routed by
 task, briefs name files, reports stay short, agents are reused with limits, there is one check per merge, review only runs on risky
 diffs, and work stops after two failed fixes.

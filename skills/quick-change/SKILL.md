@@ -1,10 +1,12 @@
 ---
 name: quick-change
-description: Fast and medium lanes - small features, fixes and feedback with no design docs (fast) or one short design note (medium, contract change or migration). Use for "fix nhanh", "sửa luôn", "thêm nút", UI feedback.
+description: Fast and medium lane steps of wf, normally entered through /wf:work once it has picked the lane - a small fix or feature with no docs (fast) or one short design note (medium, contract change or migration). Call it directly only when the user names it or the lane is already chosen.
 ---
 # Quick change
 
-Lane rules and token-cost rules: `/wf:work`. Verbs and paths: `.claude/workflow.md`. `R` = main checkout root, `W` = this change's worktree.
+**Start:** read `.claude/workflow.md` (verbs, `<key>` placeholders, `R`, run rules); missing → `/wf:setup`.
+Entered without `/wf:work`: fast = no contract/schema change, migration, architecture change or open product question;
+medium = one feature with a contract change or migration. Anything larger → stop and run `/wf:work`.
 
 ## Fast lane (no docs; the brief is the spec)
 1. **Worktree from base:** `git -C "$R" worktree add "$R/<worktrees>/q-<slug>" -b quick/<slug> <base>`. Install the area's declared

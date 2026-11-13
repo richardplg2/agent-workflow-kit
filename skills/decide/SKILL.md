@@ -5,6 +5,7 @@ description: Settles architecture and system-design questions with the owner and
 # Decide
 
 Builders must never guess at architecture. Find each decision that changes the design, settle it, write it down once.
+**Start:** read `.claude/workflow.md` (verbs, `<key>` placeholders, `R`, run rules); missing → `/wf:setup`.
 
 **Modes:** *sweep* (after `/wf:scope`: all open decisions for the approved scope) or *single problem* (go to step 2).
 

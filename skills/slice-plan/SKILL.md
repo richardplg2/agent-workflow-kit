@@ -6,6 +6,7 @@ description: Large lane step 3 - splits an approved scope into vertical slices g
 
 A good plan makes the run boring: each slice runs alone in its own worktree and finishes in one pass; waves keep agents busy
 without merge pain. Too many tiny tasks cost more in spawns and conflicts than they save.
+**Start:** read `.claude/workflow.md` (verbs, `<key>` placeholders, `R`, run rules); missing → `/wf:setup`.
 
 **Needs:** an approved scope doc (or scope stated by the owner in this session) and ADRs for the decisions it relies on.
 
@@ -17,7 +18,7 @@ without merge pain. Too many tiny tasks cost more in spawns and conflicts than t
 - **Waves:** no dependency → same wave, within `budget.max-agents` running at once. Only a real dependency moves a slice later.
   Slices that only share hot files (route table, wiring, contract root) stay together with those files named.
 - **Spike first** for unproven technology, with a measured go/no-go criterion.
-- **Each task** names files, starting symbols, owner agent and model (`sonnet` only for a closed task, see `/wf:work`; unsure → `opus`).
+- **Each task** names files, starting symbols, owner agent and model (`sonnet` only for a closed task, run rule 2; unsure → `opus`).
 - Mark each slice `mvp` or `later`.
 
 ## Steps

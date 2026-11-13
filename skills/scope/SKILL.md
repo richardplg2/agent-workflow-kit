@@ -5,6 +5,7 @@ description: Large lane step 1 - agrees with the owner what a phase or MVP inclu
 # Scope
 
 One short doc the owner signed off, so every later step can be checked against it. Building without it is how scope creeps.
+**Start:** read `.claude/workflow.md` (verbs, `<key>` placeholders, `R`, run rules); missing → `/wf:setup`.
 
 1. **Read** the product inputs the owner points to (PRD, issue, notes) and `<docs.master>` / existing code to see what already exists.
    An existing scope doc is revised, not restarted.

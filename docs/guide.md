@@ -11,7 +11,7 @@ Overview and token numbers: [README](../README.md).
 |---|---|---|
 | `project` | `<repo>/.claude/settings.json` (committed) | the whole team should get `wf` in this repo |
 | `local` | `<repo>/.claude/settings.local.json` (not committed) | only you, only this repo (recommended to try it) |
-| `user` | `~/.claude/settings.json` | you want `wf` in every repo. Every session then loads its descriptions (~410 words) |
+| `user` | `~/.claude/settings.json` | you want `wf` in every repo. Every session then loads its descriptions (~470 words) |
 
 ### 1.2 Commands
 Run them from the repo where you want `wf`, using the same scope for both:
