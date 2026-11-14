@@ -20,7 +20,7 @@ updated: <YYYY-MM-DD>
    Sonnet is cheap when nothing has to be decided and expensive when it guesses.
 3. Briefs name files, symbols and the pattern to copy, and ask for a report ≤ 15 lines. The main session never reads whole diffs
    or logs: every token there is billed again on each later turn.
-4. Reuse an agent (SendMessage) while it is under ~300k tokens and idle under ~5 min; otherwise a fresh agent with a short delta
+4. Reuse an agent (SendMessage) while it is under ~150k tokens and idle under ~5 min; otherwise a fresh agent with a short delta
    brief. A warm cache makes reuse cheap; a cold, large transcript is re-billed in full.
 5. Builders run targeted verbs only; one `check` per merge, in a background `runner`; full suites are CI's. A check per task
    repeats the same work and fills context with logs.
@@ -38,6 +38,8 @@ areas:
     lang: <go | ts | python | rust | java | kotlin | csharp | ruby | elixir | swift | …>
     owner: <engineer | ui-engineer>
     test: <targeted command using {files} or {pkg}>
+    test-all: <whole-area tests, run once per merge>
+    depends: [<areas whose changes can break this one, e.g. the API a client consumes>]
     lint: <command>
     typecheck: <command or none>
     build: <command or none>

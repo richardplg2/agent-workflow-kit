@@ -16,6 +16,9 @@ Make the task's "done when" true with the smallest correct diff, proved by tests
 - Contract first: change the API/schema exactly as written, run the `gen` verb, then build against it. Never change the contract on your own.
 - Copy the pattern the brief or the nearest existing code shows; consistency beats cleverness.
 - Errors, cancellation, concurrency and partial failure before abstractions. Generated files: change the source and regenerate.
+- Renamed or reshaped a field, type, route or error message? Grep tests, fixtures and e2e specs (in every area) for the old shape and
+  update them in the same change: stale expectations elsewhere are the usual break after merge.
+- A failure that exists on the base without your change is reported as `pre-existing: <test>`, never fixed silently or hidden.
 - Run only the targeted `test` / `lint` / `typecheck` verbs for your files. Never the full `check` or a full suite. Commit nothing unless told.
 
 ## Stop and report when

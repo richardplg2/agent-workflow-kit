@@ -10,12 +10,16 @@ Small work must cost like small work. Use the lightest lane that fits; when work
 Read `.claude/workflow.md`: verbs, placeholders, `R` and the run rules every lane follows. Missing, or without a `Run rules`
 section (older wf) → run `/wf:setup` first. Verbs marked `broken` are reported, never treated as passing.
 
-## 1. Classify (say the lane and the reason in one line)
+## 1. Classify (say the lane, the reason, and the scope in two lines)
 | Lane | All of these hold | Run |
 |---|---|---|
 | **Fast** | no contract/schema change · no migration · no architecture change · no open product question | `/wf:quick-change` fast |
 | **Medium** | one feature · changes the contract or adds a migration · fits the existing architecture | `/wf:quick-change` medium |
 | **Large** | several dependent features · or new architecture/technology · or more than ~8 tasks | `/wf:scope` → `/wf:decide` → `/wf:slice-plan` → `/wf:ship` |
+
+Scope line: what will be delivered and what is deliberately left out. When the request has several deliverables, or the next step
+hands work to another session or agent that builds or renders something expensive, wait for the owner's OK on that list first.
+Add nothing the owner did not ask for; list ideas at the end instead.
 
 Special cases:
 - A list of unrelated feedback items = several fast changes (independent ones in parallel), not one slice.
@@ -24,5 +28,10 @@ Special cases:
 - A product choice is unclear: ask one short question before building.
 - Pure question, review or investigation: answer it; no lane.
 
-## 2. Run it
-Follow the run rules in `.claude/workflow.md` in every lane. Say the lane, then invoke that lane's skill.
+## 2. Preflight (medium and large only)
+Before a long run, check in one batch and report every gap at once: git `user.name`/`user.email` set; the touched areas' declared
+dependencies installed; their verbs not `broken`; credentials, config or services the work needs are present; any step needing
+sudo or the owner's hands. A gap the owner must fix → ask now, not mid-run.
+
+## 3. Run it
+Follow the run rules in `.claude/workflow.md` in every lane. Invoke the lane's skill.

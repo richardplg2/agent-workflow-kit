@@ -12,7 +12,8 @@ Setup never changes build files, dependencies or CI, and never installs global t
    `AGENTS.md`/`CLAUDE.md`/`CONTRIBUTING`, lint configs, `Code generated` headers and `gen/` dirs. Read
    `references/stacks.md` for the default verb per ecosystem. Prefer what CI or the repo's own runner already does over defaults.
 2. **Draft the adapter** from `templates/workflow.md`: one `areas` entry per independently built directory (a monorepo has several),
-   each with `dir`, `lang`, the verbs it has, and `owner` (`engineer` or `ui-engineer`). Fill `docs`, `generated`, `contract`,
+   each with `dir`, `lang`, the verbs it has (`test` targeted, `test-all` whole area), `depends` (areas it imports or whose
+   contract it consumes), and `owner` (`engineer` or `ui-engineer`). Fill `docs`, `generated`, `contract`,
    `rules`, `budget`. Copy the `Conventions` and `Run rules` sections as they are. Rerun on an existing adapter: show a diff, keep the
    owner's edits, and add any section the template has and the adapter lacks.
 3. **Fill gaps by proposal.** A verb the repo lacks stays empty unless the owner approves an addition. The usual gap is a diff-scoped

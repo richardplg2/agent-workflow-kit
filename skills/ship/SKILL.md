@@ -18,11 +18,13 @@ what only the owner can decide. A quiet, steady run is success. Per-slice proced
 1. **Ready:** `todo` slices whose dependencies are `merged` (waves are a guide, dependencies are the rule).
 2. **Fill the budget:** ≤ `budget.max-agents` role agents running. Advance running slices before starting new ones.
 3. **Wait:** agents run in the background and notify. Don't poll or sleep; end the turn with one status line.
+   When the owner asks for status, answer in full: done, running (slice, agent, branch), blocked (reason), next step, last check result.
 4. **On notification:** apply `references/slice.md` for that slice, then go to 1.
 5. **Merge** one `review` slice at a time in plan order: `git -C "$I" merge --no-ff slice/<slug>`, then `gen` (if any) and each touched
    area's `typecheck`. Generated files in conflicts: take either side and rerun `gen`, never hand-merge. Row → `merged <sha>`; remove the
    clean slice worktree, keep the branch.
-6. **One check per merge, in the background:** a `runner` runs `check BASE=<last green rev>` in `$I` (rerun failed e2e once) and reports
+6. **One check per merge, in the background:** a `runner` runs `check BASE=<last green rev>` in `$I` plus `test-all` of each touched
+   area and of every area whose `depends` lists one (with `.claude/wf/check.sh` that is `FULL=1`; rerun failed e2e once) and reports
    only green or the failures that failed twice. Don't wait for it; the next check covers later merges too. Green → log
    `checked <sha>`, update Acceptance, move `BASE`. Red → send the failure to the owning slice's agent, fix in `$I`, check again.
 7. **Wave boundary:** if the owner can see a change, log a short "try it" (how to run + 3–5 things). Feedback goes through `/wf:quick-change`
